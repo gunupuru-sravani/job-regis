@@ -1,0 +1,51 @@
+SQL> create table jobregistration(regno number(10),
+  2  candname varchar2(10),
+  3  gender varchar2(10),
+  4  qualification varchar2(10),
+  5  age integer check(age>=20 and age<=30));
+
+Table created.
+SQL> insert into jobregistration values(201,'raju','male','Bsc',21);
+
+1 row created.
+
+SQL> insert into jobregistration values(202,'charan','male','Bcom',23);
+
+1 row created.
+
+SQL> insert into jobregistration values(203,'divya','female','BA',24);
+
+1 row created.
+
+SQL> insert into jobregistration values(204,'Madhu','male','Btech',25);
+
+1 row created.
+
+SQL> insert into jobregistration values(204,'ramya','female','Mtech',26);
+
+1 row created.
+
+SQL> select *from jobregitration;
+select *from jobregitration
+             *
+ERROR at line 1:
+ORA-00942: table or view does not exist
+
+
+SQL> select *from jobregistration;
+
+     REGNO CANDNAME   GENDER     QUALIFICAT        AGE
+---------- ---------- ---------- ---------- ----------
+       201 raju       male       Bsc                21
+       202 charan     male       Bcom               23
+       203 divya      female     BA                 24
+       204 Madhu      male       Btech              25
+       204 ramya      female     Mtech              26
+
+SQL> select *from jobregistration where gender='male';
+
+     REGNO CANDNAME   GENDER     QUALIFICAT        AGE
+---------- ---------- ---------- ---------- ----------
+       201 raju       male       Bsc                21
+       202 charan     male       Bcom               23
+       204 Madhu      male       Btech              25
